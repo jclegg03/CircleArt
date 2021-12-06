@@ -14,7 +14,7 @@ struct CircleArtApp: App
     {
         WindowGroup
         {
-            ContentView()
+            CircleView()
         }
     }
 }

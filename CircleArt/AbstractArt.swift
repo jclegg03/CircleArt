@@ -11,26 +11,26 @@ struct AbstractArt: View
 {
     @State var circles =
         [
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //10
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //20
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //30
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //40
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //50
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //60
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //70
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //80
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle(), //90
-            Circle(), Circle(), Circle(), Circle(), Circle(), Circle(),
-            Circle(), Circle(), Circle(), Circle()  //100
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //10
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //20
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //30
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //40
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //50
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //60
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //70
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //80
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //90
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle()  //100
         ]
         
     var body: some View
@@ -44,8 +44,11 @@ struct AbstractArt: View
                 {
                     index in
                     
-                    circles[index]
-                        .fill(randomColor())
+                    if(index < circles.count)
+                    {
+                        circles[index]
+                            .fill(randomColor())
+                    }
                 }
             }
         }
@@ -57,7 +60,7 @@ struct AbstractArt: View
         circles.removeAll()
         for _ in 1 ... 50 + Int(arc4random() % 51)
         {
-            circles.append(Circle())
+            circles.append(RandomCircle())
         }
     }
     

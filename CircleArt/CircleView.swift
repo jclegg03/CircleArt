@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  CircleArt
 //
-//  Created by Clegg, Jay on 12/6/21.
+//  Created by Aayla Secura on 12/6/21.
 //
 
 import SwiftUI
@@ -14,6 +14,7 @@ struct CircleView: View
     var body: some View
     {
         art
+            .background(Color.black)
     }
 }
 

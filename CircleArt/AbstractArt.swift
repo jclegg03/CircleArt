@@ -2,7 +2,7 @@
 //  AbstractArt.swift
 //  CircleArt
 //
-//  Created by Clegg, Jay on 12/6/21.
+//  Created by Ki Adi Mundi on 12/6/21.
 //
 
 import SwiftUI
@@ -30,7 +30,17 @@ struct AbstractArt: View
             RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
             RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //90
             RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
-            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle()  //100
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),  //100
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //110
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //120
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //130
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), //140
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle(),
+            RandomCircle(), RandomCircle(), RandomCircle(), RandomCircle() // 150
         ]
         
     var body: some View
@@ -58,7 +68,7 @@ struct AbstractArt: View
     {
         
         circles.removeAll()
-        for _ in 1 ... 50 + Int(arc4random() % 51)
+        for _ in 1 ... 100 + Int(arc4random() % 51)
         {
             circles.append(RandomCircle())
         }

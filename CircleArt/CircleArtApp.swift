@@ -2,7 +2,7 @@
 //  CircleArtApp.swift
 //  CircleArt
 //
-//  Created by Clegg, Jay on 12/6/21.
+//  Created by Ima-Gun Di on 12/6/21.
 //
 
 import SwiftUI

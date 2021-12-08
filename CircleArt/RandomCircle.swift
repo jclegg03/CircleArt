@@ -2,7 +2,7 @@
 //  RandomCircle.swift
 //  CircleArt
 //
-//  Created by Clegg, Jay on 12/6/21.
+//  Created by Plo Koon on 12/6/21.
 //
 
 import Foundation
@@ -17,7 +17,7 @@ struct RandomCircle : Shape
         let randX = Int(1 / 2 * rect.midX) + Int(arc4random()) % Int(rect.midX)
         let randY = Int(1 / 2 * rect.midY) + Int(arc4random()) % Int(rect.midY)
 
-        let randRadius = randomRadius(rect, randX, randY)
+        let randRadius = randomRadius(in: rect, y: randY, x: randX)
 
         let randStart = Double.random(in: 0.0 ... 2 * Double.pi)
         let randEnd = randStart + Double.random(in: 1.0 ... 2 * Double.pi)
@@ -29,9 +29,11 @@ struct RandomCircle : Shape
         return circlePath
     }
 
-    private func randomRadius(_ rect : CGRect, _ y : Int, _ x : Int) -> Int
+    private func randomRadius(in rect : CGRect, y: Int, x: Int) -> Int
     {
-        let radius: Int
+        let minRadius: Int = 20
+        let maxRadius: Int = Int(rect.midY / 2)
+        var radius: Int
         let smaller : Int
 
         if(abs(x - Int(rect.midX)) < abs(y - Int(rect.midY)))
@@ -44,6 +46,15 @@ struct RandomCircle : Shape
         }
 
         radius = Int(arc4random()) % (smaller + 1)
+        
+        if(radius < minRadius)
+        {
+            radius = minRadius
+        }
+        else if(radius > maxRadius)
+        {
+            radius = maxRadius
+        }
 
         return radius
     }

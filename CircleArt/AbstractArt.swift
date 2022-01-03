@@ -48,6 +48,7 @@ struct AbstractArt: View
         VStack
         {
             Button("Generate new art piece", action: randomizeCircles)
+            
             ZStack
             {
                 ForEach(circles.indices)

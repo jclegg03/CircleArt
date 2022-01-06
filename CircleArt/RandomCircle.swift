@@ -32,7 +32,7 @@ struct RandomCircle : Shape
     private func randomRadius(in rect : CGRect, y: Int, x: Int) -> Int
     {
         let minRadius: Int = 20
-        let maxRadius: Int = Int(rect.midY / 2)
+        let maxRadius: Int = Int(rect.midX / 2)
         var radius: Int
         let smaller : Int
 
